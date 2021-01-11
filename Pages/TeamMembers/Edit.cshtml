@@ -1,0 +1,70 @@
+﻿@page
+@model Proiect_medii_de_programare.Pages.TeamMembers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TeamMember</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TeamMember.Id" />
+            <div class="form-group">
+                <label asp-for="TeamMember.FirstName" class="control-label"></label>
+                <input asp-for="TeamMember.FirstName" class="form-control" />
+                <span asp-validation-for="TeamMember.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamMember.LastName" class="control-label"></label>
+                <input asp-for="TeamMember.LastName" class="form-control" />
+                <span asp-validation-for="TeamMember.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamMember.TShirtNumber" class="control-label"></label>
+                <input asp-for="TeamMember.TShirtNumber" class="form-control" />
+                <span asp-validation-for="TeamMember.TShirtNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamMember.DateOfBirth" class="control-label"></label>
+                <input asp-for="TeamMember.DateOfBirth" class="form-control" />
+                <span asp-validation-for="TeamMember.DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamMember.Salary" class="control-label"></label>
+                <input asp-for="TeamMember.Salary" class="form-control" />
+                <span asp-validation-for="TeamMember.Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamMember.Nationality" class="control-label"></label>
+                <input asp-for="TeamMember.Nationality" class="form-control" />
+                <span asp-validation-for="TeamMember.Nationality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamMember.PositionId" class="control-label">Position</label>
+                <select asp-for="TeamMember.PositionId" class="form-control" asp-items="ViewBag.PositionId"></select>
+                <span asp-validation-for="TeamMember.PositionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamMember.TeamId" class="control-label">Team</label>
+                <select asp-for="TeamMember.TeamId" class="form-control" asp-items="ViewBag.TeamId"></select>
+                <span asp-validation-for="TeamMember.TeamId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
